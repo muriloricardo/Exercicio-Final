@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>JavaScript</title>
+ <script>
+
+var exercicio = Array()
+            exercicio[0] = pos_00 = Array(1,2,3)
+            exercicio[1] = pos_01 = Array(4,5,6,89)
+            exercicio[2] = pos_02 = Array(7,8,9)
+            exercicio[3] = pos_03 = Array('a','b','c')
+            exercicio[4] = pos_04 = Array('d','e','f')
+            console.log(exercicio)
+
+        function adicionarLinha(){
+                    exercicio.push(exercicio[exercicio.length -1] = Array())
+                    console.log(exercicio)
+        }
+        
+        function adicionarElemento(posicao, elemento){
+            if (posicao < exercicio.length && posicao > -1) { 
+                if(posicao != '' && elemento != ''){
+                    exercicio[posicao].push(elemento)
+                    console.log(exercicio)
+                    document.getElementById('posicao').value = ''
+                    document.getElementById('valor').value = ''
+                }else{
+                    alert('Campo Vazio')
+                    document.getElementById('posicao').value = ''
+                    document.getElementById('valor').value = ''
+                    }
+            }else{
+                alert('Elemento não Encontrado')
+                document.getElementById('posicao').value = ''
+                document.getElementById('valor').value = ''
+            }
+        }
+
+        function deletarLinha(){
+            exercicio.pop()
+            console.log(exercicio)
+        }
+
+        function deletarElemento(pos){
+                if(pos != ''){
+                    exercicio[pos].pop()
+                    console.log(exercicio)
+                    document.getElementById('del_posicao').value = ''
+                 }else{
+                    alert('Campo Vazio')
+                    document.getElementById('del_posicao').value = ''
+                }
+        }
+
+        function pesquisarElemento(lin, col){
+  
+        if(lin != '' && col != ''){
+            if (lin < exercicio.length && lin > -1 && col > -1 && col < exercicio[lin].length){
+            document.getElementById('pesqu').value = exercicio[lin][col]
+            document.getElementById('lin').value = ''  
+            document.getElementById('col').value = ''  
+            }else{
+            alert('Elemento não Encontrado')
+            document.getElementById('lin').value = ''  
+            document.getElementById('col').value = ''  
+            }
+        }else{
+        alert('Campo Vazio')
+        document.getElementById('lin').value = ''  
+        document.getElementById('col').value = ''        
+        }
+    }
+
+    function trocarValor(){
+       'a'
+       console.log(exercicio)
+    }
+         
+ </script>
+ </head>
+ <body>
+    <button onclick="adicionarLinha()">Nova Linha</button>
+    <hr>
+    <label>Linha: </label><input type="text" id="posicao"/>
+    <label>Valor: </label><input type="text" id="valor"/>
+    <button onclick="adicionarElemento(getElementById('posicao').value, getElementById('valor').value)">Novo Elemento</button>
+    <hr>
+    <button onclick="deletarLinha()">Deletar Linha</button>
+    <hr>
+    <input type="text" id="del_posicao"/>
+    <button onclick="deletarElemento(getElementById('del_posicao').value)">Deletar Elemento</button>  
+    <hr>
+    <input type="text" id="lin"/>
+    <input type="text" id="col"/>
+    <button onclick="pesquisarElemento(getElementById('lin').value, getElementById('col').value)">Pesquisar Elemento</button>
+    <input type="text" id="pesqu"/>
+    <button onclick="exercicio[0].forEach(trocarValor)">Trocar Valor</button>
+ </body>
+</html>

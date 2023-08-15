@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .margin{
+            margin: 20px;
+        }
+    </style>
+    <script>
+        function modificarEtilo(cordefundo){
+            document.getElementById('div_cor').style.backgroundColor = cordefundo
+        }
+    </script>
+</head>
+<body>
+    <div class="margin">
+        <h2>Manipulando Estilo</h2>
+        <button type="button" onclick="modificarEtilo ('#1D00FA')" class="bnt bnt-primary">Azul</button>
+        <button type="button" onclick="modificarEtilo ('#09F900')" class="bnt bnt-primary">Verde</button>
+        <button type="button" onclick="modificarEtilo ('#FF0035')" class="bnt bnt-primary">Vermelho</button>
+        <button type="button" onclick="modificarEtilo ('#FAEE00')" class="bnt bnt-primary">Amarelo</button>
+
+    </div>
+    
+</body>
+</html>

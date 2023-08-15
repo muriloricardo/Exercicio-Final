@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Exercício 17 - JS</title>
+    <script>
+        var lista = Array()
+
+        function adicionarElemento(n_entrada){
+            var pos = lista.indexOf(n_entrada)
+            if(n_entrada != '') {
+                if (pos == -1){
+                    lista.push(n_entrada)
+                    alert('Elemento Adicionado!')
+                    document.getElementById('saida').value = lista
+                    document.getElementById('entrada').value = ''
+                }else{
+                    alert('Elemento já Cadastrado!')
+                    document.getElementById('saida').value = lista
+                    document.getElementById('entrada').value = ''
+                }
+            }else{
+                alert('Campo Vazio')
+                document.getElementById('entrada').value = ''
+            }
+        }
+
+        function ordenarElemento(){
+            lista.sort()
+            document.getElementById('saida').value = lista
+            document.getElementById('entrada').value = ''
+        }
+
+        function deletarElemento(){
+            lista.pop()
+            document.getElementById('saida').value = lista
+            alert('Último Elemento Deletado!')
+            document.getElementById('entrada').value = ''
+        }
+
+        function pesquisarElemento(pesquisar){
+            var pos = lista.indexOf(pesquisar)
+            if(pesquisar != '') {
+            if (pos == -1){
+                alert('Elemento não encotrado')
+                document.getElementById('entrada').value = ''
+            }else{
+                alert('O elemento pesquisado está na posição: ' + pos)
+                document.getElementById('entrada').value = ''
+            }
+            }else{
+                alert('Campo Vazio')
+                document.getElementById('entrada').value = ''
+            }
+        }
+
+       
+
+</script>
+</head>
+<body>
+    <div class="container mt-3 rounded border-dark bg-dark p-2" style="width: 27%;">
+
+        <h3 style="text-align: center; color: white;">Exercício JS</h3>
+        <hr>
+        <input type="text" id="entrada" class="w-100"/>
+        <hr>      
+        <button onclick="adicionarElemento(getElementById('entrada').value)">Adicionar</button>
+        <button onclick="ordenarElemento()">Ordenar</button>
+        <button onclick="deletarElemento()">Deletar</button>
+        <button onclick="pesquisarElemento(getElementById('entrada').value)">Pesquisar</button>
+        <hr>
+
+        <textarea id="saida" disabled="disabled" class="w-100"></textarea>
+
+    </div>
+    
+</body>
+</html>
